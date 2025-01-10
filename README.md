@@ -21,4 +21,5 @@ Welcome to the Phaser Game Project! This is a fun and interactive 2D platformer 
    ```bash
    git clone https://github.com/mahedi-bubt/phaser-react-app.git
    cd phaser-react-app
+   yarn start
    ```

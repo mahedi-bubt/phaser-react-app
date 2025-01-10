@@ -18,15 +18,16 @@ class GameMainClass extends Phaser.Scene {
 
    create() {
       // Background
-      this.add.image(360, 640, 'sky').setDisplaySize(720, 1280); // Adjusted for 720x1280
+      this.add.image(360, 640, 'sky').setDisplaySize(720, 1280);
 
       // Platforms
       this.platforms = this.physics.add.staticGroup();
       this.platforms.create(360, 1260, 'ground').setScale(2).refreshBody(); // Bottom platform
       this.platforms.create(540, 1050, 'ground'); // Platform adjusted for new layout
       this.platforms.create(80, 700, 'ground');
-      this.platforms.create(800, 550, 'ground');
-      this.platforms.create(250, 850, 'ground'); // Center platform
+      this.platforms.create(850, 550, 'ground');
+      this.platforms.create(350, 500, 'ground').setScale(0.2, 1).refreshBody();
+      this.platforms.create(350, 850, 'ground').setScale(0.6, 1).refreshBody(); // Center platform
       this.platforms.create(20, 400, 'ground'); // Left high platform
 
       // Player
@@ -99,9 +100,11 @@ class GameMainClass extends Phaser.Scene {
       );
 
       // Add start button
-      this.startButton = this.add.text(360, 640, 'Start', {
+      this.startButton = this.add.text(360, 940, 'Start', {
          fontSize: '40px',
          fill: '#fff',
+         padding: { x: 80, y: 10 },
+         backgroundColor: '#A953FF',
       });
       this.startButton.setOrigin(0.5);
       this.startButton.setInteractive();
